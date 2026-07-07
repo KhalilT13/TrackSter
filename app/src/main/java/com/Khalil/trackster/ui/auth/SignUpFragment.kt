@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.Khalil.trackster.R
+import com.Khalil.trackster.ui.customer.CustomerHomeFragment
 import com.Khalil.trackster.ui.home.PlaceholderHomeFragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
@@ -170,9 +171,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
             .addOnSuccessListener {
                 setLoading(view, isLoading = false)
                 Toast.makeText(requireContext(), getString(R.string.success_account_created), Toast.LENGTH_SHORT).show()
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, PlaceholderHomeFragment.newInstance(role))
-                    .commit()
+                navigateToHomeScreen(role)
             }
             .addOnFailureListener { exception ->
                 setLoading(view, isLoading = false)
@@ -182,6 +181,14 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
                     Toast.LENGTH_LONG
                 ).show()
             }
+    }
+
+    /** Customers go to their real home screen; business owners still get the placeholder for now. */
+    private fun navigateToHomeScreen(role: String) {
+        val destination = if (role == ROLE_CUSTOMER) CustomerHomeFragment() else PlaceholderHomeFragment.newInstance(role)
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, destination)
+            .commit()
     }
 
     /** Maps common Firebase Auth exceptions to a clear, field-attached error where possible. */

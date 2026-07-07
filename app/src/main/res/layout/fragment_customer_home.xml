@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/customer_home_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="16dp">
+
+    <!-- Top bar: greeting on the left, sign-out icon on the right. -->
+    <LinearLayout
+        android:id="@+id/top_bar_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Text is set at runtime in CustomerHomeFragment once we know the user's name. -->
+        <TextView
+            android:id="@+id/tv_greeting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/trackster_blue_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Hi, Khalil!" />
+
+        <ImageView
+            android:id="@+id/iv_sign_out"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/action_sign_out"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_sign_out"
+            app:tint="@color/trackster_blue_dark" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_section_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/customer_home_browse_services"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar_row" />
+
+    <!-- Populated with placeholder businesses for now; real Firestore data comes later. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_businesses"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_section_header"
+        tools:listitem="@layout/item_business" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,4 +43,11 @@
     <string name="signin_no_account">Don\'t have an account?</string>
     <string name="error_invalid_credentials">Invalid email or password</string>
     <string name="error_signin_generic">Something went wrong, please try again</string>
+
+    <!-- Customer home screen -->
+    <string name="customer_home_greeting_format">Hi, %1$s!</string>
+    <string name="customer_home_default_name">there</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="customer_home_browse_services">Browse services</string>
+    <string name="action_book_join_queue">Book / Join Queue</string>
 </resources>
