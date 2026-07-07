@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "574862773699",
+    "project_id": "trackster-992c6",
+    "storage_bucket": "trackster-992c6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574862773699:android:9150b096be3ffdee364176",
+        "android_client_info": {
+          "package_name": "com.Khalil.trackster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADbVdd4y8fIaY10kaH9fXtho_un2LCM48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
