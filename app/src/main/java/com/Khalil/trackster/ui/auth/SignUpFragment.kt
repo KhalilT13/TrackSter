@@ -7,6 +7,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.Khalil.trackster.R
 import com.Khalil.trackster.ui.customer.CustomerHomeFragment
 import com.Khalil.trackster.ui.home.PlaceholderHomeFragment
@@ -183,9 +184,18 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
             }
     }
 
-    /** Customers go to their real home screen; business owners still get the placeholder for now. */
+    /**
+     * Customers go to their real home screen; business owners still get the placeholder for now.
+     *
+     * Clears the entire back stack first (Landing -> Sign Up, and Sign In -> Sign Up if that's
+     * how we got here) so this becomes the new base screen. Without this, those old entries stay
+     * on the stack pointing at a fragment this transaction just removed without going through the
+     * back stack itself - pressing Back would then re-add that old fragment on top of whatever's
+     * showing, without ever removing it, making both appear at once.
+     */
     private fun navigateToHomeScreen(role: String) {
         val destination = if (role == ROLE_CUSTOMER) CustomerHomeFragment() else PlaceholderHomeFragment.newInstance(role)
+        parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, destination)
             .commit()

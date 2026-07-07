@@ -50,4 +50,17 @@
     <string name="action_sign_out">Sign out</string>
     <string name="customer_home_browse_services">Browse services</string>
     <string name="action_book_join_queue">Book / Join Queue</string>
+    <string name="action_my_appointments">My Appointments</string>
+
+    <!-- Booking confirmation screen -->
+    <string name="booking_confirm_title">Confirm your appointment</string>
+    <string name="booking_confirm_note">You\'ll be notified when it\'s your turn</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="success_booking_created">Appointment confirmed!</string>
+    <string name="error_booking_generic">Something went wrong booking this appointment. Please try again.</string>
+
+    <!-- My appointments screen -->
+    <string name="my_appointments_empty">No appointments yet</string>
+    <string name="error_my_appointments_generic">Couldn\'t load your appointments. Please try again.</string>
 </resources>

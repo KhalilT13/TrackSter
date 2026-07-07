@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,9 +14,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 /**
- * The customer's home screen after signing in or up. Shows a greeting and a
- * placeholder list of businesses to browse - the hardcoded list here is
- * swapped for real Firestore business data in a later step.
+ * The customer's home screen after signing in or up. Shows a greeting, a
+ * placeholder list of businesses to browse (real Firestore business data
+ * comes in a later step), and entry points into booking and "My Appointments".
  */
 class CustomerHomeFragment : Fragment(R.layout.fragment_customer_home) {
 
@@ -34,6 +33,13 @@ class CustomerHomeFragment : Fragment(R.layout.fragment_customer_home) {
 
         loadGreeting(view)
         setUpBusinessList(view)
+
+        view.findViewById<ImageView>(R.id.iv_my_appointments).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, MyAppointmentsFragment())
+                .addToBackStack(null)
+                .commit()
+        }
 
         view.findViewById<ImageView>(R.id.iv_sign_out).setOnClickListener {
             signOut()
@@ -74,7 +80,10 @@ class CustomerHomeFragment : Fragment(R.layout.fragment_customer_home) {
         )
 
         val adapter = BusinessAdapter(dummyBusinesses) { business ->
-            Toast.makeText(requireContext(), "${business.name}: coming soon", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, BookingConfirmFragment.newInstance(business.name, business.serviceType))
+                .addToBackStack(null)
+                .commit()
         }
 
         view.findViewById<RecyclerView>(R.id.recycler_businesses).apply {
