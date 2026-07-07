@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="trackster_blue">#2563EB</color>
+    <color name="trackster_blue_dark">#1E3A8A</color>
+    <color name="trackster_blue_light">#EAF2FE</color>
+    <color name="trackster_watermark">#1A2563EB</color>
+    <color name="light_gray">#D1D5DB</color>
 </resources>
