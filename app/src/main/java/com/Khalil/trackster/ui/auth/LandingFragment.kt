@@ -2,7 +2,6 @@ package com.Khalil.trackster.ui.auth
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.Khalil.trackster.R
@@ -14,8 +13,7 @@ import com.google.android.material.card.MaterialCardView
  * "Customer" and "Business Owner" roles, and Sign In / Sign Up actions.
  *
  * The role cards are just visual selection - the chosen role is passed
- * along when navigating to sign up. Sign In doesn't go anywhere yet and
- * just shows a Toast; that screen comes in a later step.
+ * along when navigating to either Sign In or Sign Up.
  */
 class LandingFragment : Fragment(R.layout.fragment_landing) {
 
@@ -48,20 +46,23 @@ class LandingFragment : Fragment(R.layout.fragment_landing) {
         }
 
         view.findViewById<MaterialButton>(R.id.btn_sign_in).setOnClickListener {
-            Toast.makeText(requireContext(), "Sign In clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        view.findViewById<MaterialButton>(R.id.btn_sign_up).setOnClickListener {
-            val roleArg = if (selectedRole == Role.BUSINESS) {
-                SignUpFragment.ROLE_BUSINESS
-            } else {
-                SignUpFragment.ROLE_CUSTOMER
-            }
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SignUpFragment.newInstance(roleArg))
+                .replace(R.id.fragment_container, SignInFragment.newInstance(selectedRoleArg()))
                 .addToBackStack(null)
                 .commit()
         }
+
+        view.findViewById<MaterialButton>(R.id.btn_sign_up).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SignUpFragment.newInstance(selectedRoleArg()))
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
+    /** Converts the selected role card into the plain "customer"/"business" string the auth screens expect. */
+    private fun selectedRoleArg(): String {
+        return if (selectedRole == Role.BUSINESS) SignUpFragment.ROLE_BUSINESS else SignUpFragment.ROLE_CUSTOMER
     }
 
     /** Re-applies the selected/unselected stroke style to both role cards. */
