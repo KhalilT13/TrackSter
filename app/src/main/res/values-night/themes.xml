@@ -1,0 +1,19 @@
+<resources>
+    <style name="Base.Theme.TrackSter" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/trackster_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/trackster_cyan</item>
+        <item name="colorSurface">@color/trackster_card</item>
+        <item name="colorOnSurface">@color/trackster_navy</item>
+        <item name="colorOnSurfaceVariant">@color/trackster_text_secondary</item>
+        <item name="colorOutline">@color/trackster_outline</item>
+        <item name="android:colorAccent">@color/trackster_blue</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:navigationBarColor">@color/trackster_card</item>
+        <item name="android:statusBarColor">@color/trackster_surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@color/trackster_surface</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

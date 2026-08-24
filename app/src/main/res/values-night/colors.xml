@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="trackster_blue">#6E9BFF</color>
+    <color name="trackster_blue_pressed">#8AAEFF</color>
+    <color name="trackster_blue_dark">#D8E5FF</color>
+    <color name="trackster_navy">#F2F6FF</color>
+    <color name="trackster_blue_light">#172A4A</color>
+    <color name="trackster_blue_soft">#3C5F96</color>
+    <color name="trackster_surface">#0E1624</color>
+    <color name="trackster_card">#172131</color>
+    <color name="trackster_surface_high">#202C3E</color>
+    <color name="trackster_text_secondary">#B3C0D4</color>
+    <color name="trackster_outline">#35445A</color>
+    <color name="trackster_cyan">#58D5E7</color>
+    <color name="trackster_success">#60D39B</color>
+    <color name="trackster_warning">#FFB36B</color>
+    <color name="trackster_watermark">#3377A7FF</color>
+    <color name="light_gray">#35445A</color>
+    <color name="status_completed_bg">#173A2D</color>
+    <color name="status_completed_text">#7BE0AD</color>
+    <color name="status_in_service_bg">#443216</color>
+    <color name="status_in_service_text">#FFD080</color>
+    <color name="status_cancelled_bg">#462326</color>
+    <color name="status_cancelled_text">#FF9C9C</color>
+</resources>

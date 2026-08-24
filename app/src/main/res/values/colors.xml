@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="trackster_blue">#246BFD</color>
+    <color name="trackster_blue_pressed">#1855D8</color>
+    <color name="trackster_blue_dark">#102A56</color>
+    <color name="trackster_navy">#0B1F3A</color>
+    <color name="trackster_blue_light">#EDF3FF</color>
+    <color name="trackster_blue_soft">#AFCBFF</color>
+    <color name="trackster_surface">#F5F7FB</color>
+    <color name="trackster_card">#FFFFFFFF</color>
+    <color name="trackster_surface_high">#EBF0F7</color>
+    <color name="trackster_text_secondary">#66758A</color>
+    <color name="trackster_outline">#D8E1EE</color>
+    <color name="trackster_cyan">#14B8D4</color>
+    <color name="trackster_success">#179C62</color>
+    <color name="trackster_warning">#C35A05</color>
+    <color name="trackster_white_16">#29FFFFFF</color>
+    <color name="trackster_white_24">#3DFFFFFF</color>
+    <color name="trackster_white_80">#CCFFFFFF</color>
+    <color name="trackster_watermark">#1A2563EB</color>
+    <color name="light_gray">#D8E1EE</color>
+
+    <!-- Status badge colors. "Waiting" reuses the blue pair above; "Completed" is a muted green;
+         "In service" is a muted amber. -->
+    <color name="status_completed_bg">#E6F4EA</color>
+    <color name="status_completed_text">#2E7D46</color>
+    <color name="status_in_service_bg">#FEF3C7</color>
+    <color name="status_in_service_text">#B45309</color>
+    <color name="status_cancelled_bg">#FDECEC</color>
+    <color name="status_cancelled_text">#B42318</color>
+</resources>

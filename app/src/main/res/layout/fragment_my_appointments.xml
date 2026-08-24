@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_appointments_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trackster_surface"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="16dp">
+
+    <TextView
+        android:id="@+id/tv_my_appointments_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/action_my_appointments"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/trackster_navy"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Populated from the Firestore "appointments" collection, filtered by customerId. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_appointments"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_appointments_title"
+        tools:listitem="@layout/item_appointment" />
+
+    <!-- Shown instead of the RecyclerView when the customer has no appointments yet. -->
+    <TextView
+        android:id="@+id/tv_empty_state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_empty_state"
+        app:drawableTopCompat="@drawable/ic_appointments"
+        android:drawablePadding="14dp"
+        android:gravity="center"
+        android:minHeight="200dp"
+        android:padding="28dp"
+        android:text="@string/my_appointments_empty"
+        android:textColor="@color/trackster_text_secondary"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_appointments_title"
+        app:drawableTint="@color/trackster_blue_soft"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

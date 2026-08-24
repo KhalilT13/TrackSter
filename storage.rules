@@ -1,0 +1,40 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function allowedDemoUser() {
+      return request.auth != null
+        && request.auth.uid in [
+          'ZRUhTnw2gUdQLZ9evCt6JgFSOdR2',
+          'HkQedr5mw9ZTjCZqkXtDmI4VQmB3',
+          'wTfJzS7tgQcV2e1wT0Sip9fRp5E3',
+          '9rdD2WubS5cWVlmQWNK1S3Ql1Pv1',
+          '2CxYBvQjI5OFcWER9gttpw8PqCf1',
+          '9QAFCLAY1zd4s0SJAPnDTFF0Dai1',
+          'TnlMRmqdt8atm0GyZghDLisew1m2',
+          '68XEUiDh8HZSu0pa04pG1P7i6sd2',
+          'EjK6iZHcB6XVNgtWYLR5UXUwBXp1',
+          'QS5aVvd2QeRy8T44Yt0sjpdf7Ns2',
+          'Nl0RjhL8tSebIpdxBTI8tdc70W52'
+        ];
+    }
+
+    match /businesses/{businessId}/gallery/{fileName} {
+      allow read: if allowedDemoUser();
+      allow create, update: if allowedDemoUser()
+        && request.auth.uid == businessId
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow delete: if allowedDemoUser() && request.auth.uid == businessId;
+    }
+
+    match /businesses/{businessId}/logo/{fileName} {
+      allow read: if allowedDemoUser();
+      allow create, update: if allowedDemoUser()
+        && request.auth.uid == businessId
+        && request.resource.size < 2 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow delete: if allowedDemoUser() && request.auth.uid == businessId;
+    }
+  }
+}

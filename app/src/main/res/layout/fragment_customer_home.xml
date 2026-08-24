@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/trackster_surface"
+    android:paddingStart="20dp" android:paddingTop="16dp" android:paddingEnd="20dp" android:paddingBottom="8dp">
+    <com.google.android.material.card.MaterialCardView android:id="@+id/customer_header_card" style="@style/Trackster.Card.Surface"
+        android:layout_width="0dp" android:layout_height="wrap_content" app:cardCornerRadius="24dp"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" android:padding="18dp">
+            <ImageView android:layout_width="42dp" android:layout_height="42dp" android:background="@drawable/bg_status_pill" android:backgroundTint="@color/trackster_blue_light" android:contentDescription="@null" android:padding="10dp" android:src="@drawable/ic_home" app:tint="@color/trackster_blue" />
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:id="@+id/tv_greeting" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/trackster_navy" android:textSize="22sp" android:textStyle="bold" tools:text="Hi, Khalil!" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/customer_home_subtitle" android:textColor="@color/trackster_text_secondary" android:textSize="12sp" />
+            </LinearLayout>
+            <ImageView android:id="@+id/iv_sign_out" android:layout_width="40dp" android:layout_height="40dp" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="@string/action_sign_out" android:padding="9dp" android:src="@drawable/ic_sign_out" app:tint="@color/trackster_blue_dark" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_business_search" style="@style/Trackster.TextInput"
+        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:hint="@string/hint_search_businesses"
+        app:startIconDrawable="@drawable/ic_search" app:layout_constraintTop_toBottomOf="@id/customer_header_card" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_business_search" android:layout_width="match_parent" android:layout_height="wrap_content" android:imeOptions="actionSearch" android:inputType="text" android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.chip.ChipGroup android:id="@+id/business_filter_group" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:singleSelection="true" app:selectionRequired="true"
+        app:layout_constraintTop_toBottomOf="@id/til_business_search" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.chip.Chip android:id="@+id/chip_all" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/filter_all" />
+        <com.google.android.material.chip.Chip android:id="@+id/chip_open" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/filter_open" />
+        <com.google.android.material.chip.Chip android:id="@+id/chip_top_rated" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/filter_top_rated" />
+        <com.google.android.material.chip.Chip android:id="@+id/chip_favorites" style="@style/Widget.Material3.Chip.Filter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/filter_favorites" />
+    </com.google.android.material.chip.ChipGroup>
+    <TextView android:id="@+id/tv_section_header" style="@style/Trackster.Text.Section" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/customer_home_browse_services"
+        app:layout_constraintTop_toBottomOf="@id/business_filter_group" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_businesses" android:layout_width="0dp" android:layout_height="0dp" android:layout_marginTop="10dp" android:clipToPadding="false" android:paddingBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_section_header" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" tools:listitem="@layout/item_business" />
+    <TextView android:id="@+id/tv_businesses_empty" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:background="@drawable/bg_empty_state" android:gravity="center" android:padding="24dp" android:text="@string/customer_home_no_businesses" android:textColor="@color/trackster_text_secondary" android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_section_header" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

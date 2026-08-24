@@ -1,0 +1,171 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null
+        && request.auth.uid in [
+          'ZRUhTnw2gUdQLZ9evCt6JgFSOdR2',
+          'HkQedr5mw9ZTjCZqkXtDmI4VQmB3',
+          'wTfJzS7tgQcV2e1wT0Sip9fRp5E3',
+          '9rdD2WubS5cWVlmQWNK1S3Ql1Pv1',
+          '2CxYBvQjI5OFcWER9gttpw8PqCf1',
+          '9QAFCLAY1zd4s0SJAPnDTFF0Dai1',
+          'TnlMRmqdt8atm0GyZghDLisew1m2',
+          '68XEUiDh8HZSu0pa04pG1P7i6sd2',
+          'EjK6iZHcB6XVNgtWYLR5UXUwBXp1',
+          'QS5aVvd2QeRy8T44Yt0sjpdf7Ns2',
+          'Nl0RjhL8tSebIpdxBTI8tdc70W52'
+        ];
+    }
+
+    function ownsUser(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow create: if ownsUser(userId)
+        && request.resource.data.uid == userId
+        && request.resource.data.role in ['customer', 'business'];
+      allow read, update, delete: if ownsUser(userId);
+    }
+
+    // Public-to-signed-in directory with business-facing fields only.
+    match /businesses/{businessId} {
+      allow read: if signedIn();
+      allow create, update, delete: if signedIn()
+        && request.auth.uid == businessId
+        && request.resource.data.ownerId == businessId;
+    }
+
+    match /appointments/{appointmentId} {
+      allow create: if signedIn()
+        && request.resource.data.customerId == request.auth.uid
+        && request.resource.data.businessId is string
+        && request.resource.data.serviceId is string
+        && request.resource.data.serviceType is string
+        && request.resource.data.servicePriceType in ['fixed', 'range', 'contact']
+        && request.resource.data.priceDisplay is string
+        && request.resource.data.serviceDurationMinutes is int
+        && request.resource.data.serviceDurationMinutes >= 5
+        && request.resource.data.serviceDurationMinutes <= 480
+        && request.resource.data.appointmentDateKey is string
+        && request.resource.data.appointmentStartMinutes is int
+        && request.resource.data.appointmentEndMinutes is int
+        && request.resource.data.appointmentEndMinutes > request.resource.data.appointmentStartMinutes
+        && request.resource.data.bookingSlotIds is list
+        && request.resource.data.bookingSlotIds.size() > 0
+        && exists(/databases/$(database)/documents/businesses/$(request.resource.data.businessId))
+        && get(/databases/$(database)/documents/businesses/$(request.resource.data.businessId)).data.isQueueOpen == true
+        && getAfter(/databases/$(database)/documents/bookingSlots/$(request.resource.data.bookingSlotIds[0])).data.appointmentId == appointmentId;
+
+      allow read: if signedIn()
+        && (resource.data.customerId == request.auth.uid
+          || resource.data.businessId == request.auth.uid);
+
+      allow update: if signedIn()
+        && request.resource.data.customerId == resource.data.customerId
+        && request.resource.data.businessId == resource.data.businessId
+        && (
+          resource.data.businessId == request.auth.uid
+          || (
+            resource.data.customerId == request.auth.uid
+            && resource.data.status == 'waiting'
+            && (
+              (
+                request.resource.data.status == 'cancelled'
+                && request.resource.data.diff(resource.data).affectedKeys()
+                  .hasOnly(['status', 'updatedAt'])
+              )
+              ||
+              (
+                request.resource.data.status == resource.data.status
+                && request.resource.data.appointmentDateKey is string
+                && request.resource.data.appointmentStartMinutes is int
+                && request.resource.data.appointmentEndMinutes is int
+                && request.resource.data.appointmentEndMinutes > request.resource.data.appointmentStartMinutes
+                && request.resource.data.bookingSlotIds is list
+                && request.resource.data.bookingSlotIds.size() > 0
+                && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+                  'appointmentDate', 'appointmentDateKey', 'appointmentTime',
+                  'appointmentStartMinutes', 'appointmentEndMinutes', 'bookingSlotIds',
+                  'updatedAt', 'rescheduledAt'
+                ])
+                && getAfter(/databases/$(database)/documents/bookingSlots/$(request.resource.data.bookingSlotIds[0])).data.appointmentId == appointmentId
+              )
+            )
+          )
+        );
+
+      allow delete: if false;
+    }
+
+    // Minimal time occupancy records prevent double booking without exposing
+    // another customer's appointment details.
+    match /bookingSlots/{slotId} {
+      allow get: if signedIn();
+      allow list: if false;
+      allow create: if signedIn()
+        && !exists(/databases/$(database)/documents/bookingSlots/$(slotId))
+        && request.resource.data.customerId == request.auth.uid
+        && request.resource.data.businessId is string
+        && request.resource.data.appointmentId is string
+        && request.resource.data.appointmentDateKey is string
+        && request.resource.data.startMinutes is int
+        && exists(/databases/$(database)/documents/businesses/$(request.resource.data.businessId))
+        && get(/databases/$(database)/documents/businesses/$(request.resource.data.businessId)).data.isQueueOpen == true;
+      allow update: if false;
+      allow delete: if signedIn()
+        && (resource.data.customerId == request.auth.uid
+          || resource.data.businessId == request.auth.uid);
+    }
+
+    // One verified review per completed appointment. The appointment id is also
+    // the review document id, which makes duplicates impossible.
+    match /reviews/{appointmentId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && !exists(/databases/$(database)/documents/reviews/$(appointmentId))
+        && request.resource.data.appointmentId == appointmentId
+        && request.resource.data.customerId == request.auth.uid
+        && request.resource.data.rating is int
+        && request.resource.data.rating >= 1
+        && request.resource.data.rating <= 5
+        && request.resource.data.comment is string
+        && request.resource.data.comment.size() <= 500
+        && exists(/databases/$(database)/documents/appointments/$(appointmentId))
+        && get(/databases/$(database)/documents/appointments/$(appointmentId)).data.customerId == request.auth.uid
+        && get(/databases/$(database)/documents/appointments/$(appointmentId)).data.businessId == request.resource.data.businessId
+        && get(/databases/$(database)/documents/appointments/$(appointmentId)).data.status == 'completed';
+      allow update, delete: if false;
+    }
+
+    // Customers see number-only counters, never other customers' appointment data.
+    match /queueCounters/{businessId} {
+      allow read: if signedIn();
+
+      allow create: if signedIn()
+        && exists(/databases/$(database)/documents/businesses/$(businessId))
+        && request.resource.data.businessId == businessId
+        && request.resource.data.lastNumber == 1;
+
+      allow update: if signedIn()
+        && request.resource.data.businessId == businessId
+        && (
+          (
+            request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['lastNumber', 'updatedAt'])
+            && request.resource.data.lastNumber == resource.data.lastNumber + 1
+          )
+          ||
+          (
+            request.auth.uid == businessId
+            && request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['currentServingNumber', 'updatedAt'])
+          )
+        );
+
+      allow delete: if false;
+    }
+  }
+}

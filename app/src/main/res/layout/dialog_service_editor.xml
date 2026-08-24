@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="8dp">
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_service_name" style="@style/Trackster.TextInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/label_service_name">
+            <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLength="40" android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/label_pricing_type" android:textStyle="bold" />
+        <RadioGroup android:id="@+id/radio_price_type" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/radio_fixed_price" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pricing_fixed" />
+            <RadioButton android:id="@+id/radio_price_range" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/pricing_range" />
+            <RadioButton android:id="@+id/radio_contact_price" android:layout_width="match_parent" android:layout_height="wrap_content" android:checked="true" android:text="@string/pricing_contact" />
+        </RadioGroup>
+        <LinearLayout android:id="@+id/price_fields" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:visibility="gone">
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_minimum_price" style="@style/Trackster.TextInput" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="@string/label_fixed_price">
+                <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_maximum_price" style="@style/Trackster.TextInput" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:layout_weight="1" android:hint="@string/label_maximum_price" android:visibility="gone">
+                <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_service_duration" style="@style/Trackster.TextInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:hint="@string/label_duration_minutes">
+            <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</ScrollView>
