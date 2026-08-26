@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Rounded "pill" background for status badges. The fill is white here but is
+    recolored at runtime via backgroundTint in the adapters (light blue for
+    "Waiting", light green for "Completed"). Tinting rather than swapping the
+    drawable keeps the view's padding intact.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/white" />
+    <corners android:radius="100dp" />
+</shape>

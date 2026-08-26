@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Trackster.Card.Surface" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" app:cardElevation="0dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_day_open" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/trackster_navy" android:textSize="16sp" android:textStyle="bold" />
+        <TextView android:id="@+id/tv_working_hours_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="@string/working_hours_label" android:textColor="@color/trackster_text_secondary" android:textSize="12sp" android:textStyle="bold" />
+        <LinearLayout android:id="@+id/day_hours_row" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center_vertical" android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_open_time" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_open_time" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="8dp" android:text="@string/time_to" android:textColor="@color/trackster_text_secondary" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_close_time" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_close_time" />
+        </LinearLayout>
+        <View android:id="@+id/break_divider" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="12dp" android:background="@color/trackster_outline" />
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_break" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/break_time_label" android:textColor="@color/trackster_navy" android:textStyle="bold" />
+        <TextView android:id="@+id/tv_break_help" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/break_time_help" android:textColor="@color/trackster_text_secondary" android:textSize="12sp" />
+        <LinearLayout android:id="@+id/break_hours_row" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center_vertical" android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_break_start" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_break_start_time" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="8dp" android:text="@string/time_to" android:textColor="@color/trackster_text_secondary" />
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_break_end" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_break_end_time" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Trackster.Card.Surface" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp" app:cardCornerRadius="22dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="150dp">
+            <ImageView android:id="@+id/iv_business_icon" android:layout_width="match_parent" android:layout_height="match_parent"
+                android:background="@color/trackster_blue_light" android:contentDescription="@null" android:padding="0dp"
+                android:scaleType="centerCrop" />
+            <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" android:layout_gravity="bottom|start" android:layout_margin="14dp" app:cardBackgroundColor="@color/trackster_card" app:cardCornerRadius="32dp" app:cardElevation="3dp">
+                <ImageView android:id="@+id/iv_business_logo" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="@string/business_logo" android:padding="15dp" android:scaleType="centerInside" android:src="@drawable/ic_business" app:tint="@color/trackster_blue" />
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_favorite" style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                android:layout_width="48dp" android:layout_height="48dp" android:layout_gravity="top|end"
+                android:layout_margin="10dp" app:icon="@drawable/ic_favorite_outline" app:iconTint="@color/trackster_blue" />
+        </FrameLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:id="@+id/tv_business_name" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:textColor="@color/trackster_navy" android:textSize="18sp" android:textStyle="bold" tools:text="City Clinic" />
+                <ImageView android:layout_width="18dp" android:layout_height="18dp" android:contentDescription="@null" android:src="@drawable/ic_star" app:tint="@color/status_in_service_text" />
+                <TextView android:id="@+id/tv_business_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="4dp"
+                    android:textColor="@color/trackster_navy" android:textSize="13sp" android:textStyle="bold" tools:text="4.8 (24)" />
+            </LinearLayout>
+            <TextView android:id="@+id/tv_service_type" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp"
+                android:textColor="@color/trackster_text_secondary" android:textSize="13sp" tools:text="Checkup · Consultation" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:id="@+id/tv_business_hours" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/trackster_blue_dark" android:textSize="12sp" tools:text="Mon-Fri, 09:00-17:00" />
+                <TextView android:id="@+id/tv_queue_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_status_pill"
+                    android:backgroundTint="@color/status_completed_bg" android:paddingHorizontal="10dp" android:paddingVertical="4dp" android:textColor="@color/status_completed_text" android:textSize="11sp" android:textStyle="bold" tools:text="Queue open" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn_book" style="@style/Trackster.Button.Primary"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/action_book_join_queue" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

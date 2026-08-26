@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/trackster_surface" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+            <ImageView android:id="@+id/iv_back" android:layout_width="42dp" android:layout_height="42dp" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="@string/action_back" android:padding="9dp" android:src="@drawable/ic_arrow_back" app:tint="@color/trackster_navy" />
+            <TextView style="@style/Trackster.Text.Headline" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/privacy_title" />
+        </LinearLayout>
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/privacy_effective_date" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:text="@string/privacy_information_title" />
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/privacy_information_body" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/privacy_use_title" />
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/privacy_use_body" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/privacy_storage_title" />
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/privacy_storage_body" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/privacy_sharing_title" />
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/privacy_sharing_body" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/privacy_controls_title" />
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/privacy_controls_body" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/accessibility_statement_title" />
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/accessibility_statement_body" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/privacy_contact_title" />
+        <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:paddingBottom="24dp" android:text="@string/privacy_contact_body" />
+    </LinearLayout>
+</ScrollView>

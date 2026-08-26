@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="4dp">
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/til_special_date_title" style="@style/Trackster.TextInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/special_date_reason_hint">
+            <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLength="60" android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_special_closed" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:checked="true" android:text="@string/special_date_closed_all_day" />
+        <LinearLayout android:id="@+id/special_custom_hours_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+            <TextView style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/special_date_custom_hours" android:textStyle="bold" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:gravity="center_vertical" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_special_open" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_open_time" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="8dp" android:text="@string/time_to" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_special_close" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_close_time" />
+            </LinearLayout>
+            <com.google.android.material.materialswitch.MaterialSwitch android:id="@+id/switch_special_break" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/break_time_label" />
+            <LinearLayout android:id="@+id/special_break_hours_row" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:gravity="center_vertical" android:orientation="horizontal" android:visibility="gone">
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_special_break_start" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_break_start_time" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="8dp" android:text="@string/time_to" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/btn_special_break_end" style="@style/Trackster.Button.Outlined" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/default_break_end_time" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

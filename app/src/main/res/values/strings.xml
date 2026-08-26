@@ -1,0 +1,383 @@
+<resources>
+    <string name="app_name">TrackSter</string>
+
+    <!-- Landing screen -->
+    <string name="app_title">Trackster</string>
+    <string name="landing_logo_description">Trackster logo</string>
+    <string name="landing_tagline">Track. Schedule. Stay ahead.</string>
+    <string name="landing_subtitle">Manage appointments and live queues with ease</string>
+    <string name="landing_choose_role">Choose your role</string>
+    <string name="role_customer_title">Customer</string>
+    <string name="role_customer_description">Book appointments and join live queues</string>
+    <string name="role_business_title">Business Owner</string>
+    <string name="role_business_description">Manage your business, appointments and queues</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="landing_footer_note">Choose your role to continue</string>
+
+    <!-- Authentication -->
+    <string name="action_back">Back</string>
+    <string name="signup_title">Create account</string>
+    <string name="signup_role_subtitle_format">Signing up as %1$s</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_business_name">Business Name</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="action_create_account">Create account</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_invalid_email">Enter a valid email address</string>
+    <string name="error_passwords_mismatch">Passwords do not match</string>
+    <string name="error_email_in_use">That email is already registered. Try signing in instead.</string>
+    <string name="error_weak_password">Password is too weak. Use at least 6 characters.</string>
+    <string name="error_network">Network error. Check your connection and try again.</string>
+    <string name="error_signup_generic">Something went wrong creating your account. Please try again.</string>
+    <string name="success_account_created">Account created!</string>
+    <string name="signin_title">Welcome back</string>
+    <string name="signin_subtitle">Sign in to continue</string>
+    <string name="signin_no_account">Don\'t have an account?</string>
+    <string name="error_invalid_credentials">Invalid email or password</string>
+    <string name="error_signin_generic">Something went wrong, please try again</string>
+
+    <!-- Customer home -->
+    <string name="customer_home_greeting_format">Hi, %1$s!</string>
+    <string name="customer_home_default_name">there</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="customer_home_browse_services">Browse services</string>
+    <string name="customer_home_subtitle">Find a trusted business and reserve your place in seconds.</string>
+    <string name="customer_home_no_businesses">No businesses are available yet. Create a business account to publish one.</string>
+    <string name="error_businesses_generic">Couldn\'t load businesses. Please try again.</string>
+    <string name="action_book_join_queue">Book / Join Queue</string>
+    <string name="action_my_appointments">My Appointments</string>
+
+    <!-- Booking -->
+    <string name="booking_title">Book appointment</string>
+    <string name="booking_step_service">1. Choose a service</string>
+    <string name="booking_step_date">2. Select a date</string>
+    <string name="booking_step_time">3. Select a time</string>
+    <string name="booking_summary_title">Summary</string>
+    <string name="booking_summary_service">Service</string>
+    <string name="booking_summary_date">Date</string>
+    <string name="booking_summary_time">Time</string>
+    <string name="booking_summary_price">Price</string>
+    <string name="action_book_appointment">Book Appointment</string>
+    <string name="booking_incomplete">Please choose a service, date and time</string>
+    <string name="success_booking_created">Appointment confirmed!</string>
+    <string name="error_booking_generic">Something went wrong booking this appointment. Please try again.</string>
+    <string name="error_queue_closed">This business is not accepting new bookings right now.</string>
+    <string name="booking_loading_availability">Loading current services and availability…</string>
+    <string name="booking_choose_service_date">Choose a service and an available date to see times.</string>
+    <string name="booking_no_open_dates">This business has no available working days in the next two weeks.</string>
+    <string name="booking_no_times">No times are available on this date. Try another day.</string>
+    <string name="error_schedule_changed">The business schedule changed. Please select a new date and time.</string>
+    <string name="error_time_just_taken">That time was just booked by another customer. Please choose another time.</string>
+    <string name="booking_slot_unavailable_format">%1$s · Booked</string>
+
+    <!-- Appointments -->
+    <string name="my_appointments_empty">No appointments yet</string>
+    <string name="my_appointments_queue_format">#%1$d</string>
+    <string name="my_appointments_datetime_format">%1$s · %2$s</string>
+    <string name="error_my_appointments_generic">Couldn\'t load your appointments. Please try again.</string>
+
+    <!-- Customer live queue -->
+    <string name="customer_queue_title">My live queue</string>
+    <string name="queue_live">Live</string>
+    <string name="queue_in_line_for">You are in line for</string>
+    <string name="queue_estimated_wait">Estimated wait</string>
+    <string name="queue_position">Position</string>
+    <string name="queue_wait_minutes">%1$d min</string>
+    <string name="queue_wait_now">Now</string>
+    <string name="queue_your_turn">Your turn</string>
+    <string name="queue_appointment_details">Appointment details</string>
+    <string name="queue_live_note">This screen updates automatically when the business calls the next customer.</string>
+    <string name="queue_empty_title">No active queue</string>
+    <string name="queue_empty_body">Book a service and your live position will appear here.</string>
+    <string name="error_queue_generic">Couldn\'t load your live queue. Please try again.</string>
+    <plurals name="queue_people_ahead">
+        <item quantity="one">%1$d ahead</item>
+        <item quantity="other">%1$d ahead</item>
+    </plurals>
+
+    <!-- Business dashboard -->
+    <string name="business_dashboard_greeting_format">Hi, %1$s!</string>
+    <string name="business_dashboard_queue_header">Your queue</string>
+    <string name="business_dashboard_subtitle">Here’s how your day is moving.</string>
+    <string name="business_dashboard_empty_body">New appointments will appear here automatically.</string>
+    <string name="business_dashboard_empty">No appointments in your queue yet</string>
+    <string name="business_dashboard_auto_refresh">Auto refresh</string>
+    <string name="business_stat_waiting">Waiting customers</string>
+    <string name="business_stat_today">Appointments today</string>
+    <string name="business_stat_in_service">In service</string>
+    <string name="business_queue_number_format">#%1$d</string>
+    <string name="action_call_next">Call Next</string>
+    <string name="action_complete">Complete</string>
+    <string name="error_business_dashboard_generic">Couldn\'t load your queue. Please try again.</string>
+    <string name="error_update_status_generic">Couldn\'t update that appointment. Please try again.</string>
+
+    <!-- Business services -->
+    <string name="default_service_name">General Service</string>
+    <string name="services_title">Your services</string>
+    <string name="services_subtitle">Publish the services customers can discover and book.</string>
+    <string name="services_add_title">Add a service</string>
+    <string name="label_service_name">Service name</string>
+    <string name="action_add_service">Add service</string>
+    <string name="services_published_title">Published services</string>
+    <string name="services_published_note">Changes appear instantly on the customer home screen.</string>
+    <string name="services_empty">Add your first service so customers can book with you.</string>
+    <string name="service_remove_description">Remove %1$s</string>
+    <string name="error_service_too_long">Service names can use up to 40 characters</string>
+    <string name="error_service_duplicate">That service is already published</string>
+    <string name="error_service_last">Keep at least one published service</string>
+    <string name="error_services_generic">Couldn\'t update services. Please try again.</string>
+    <string name="services_pricing_note">Add a fixed price, price range, or contact-for-price. Prices can be edited at any time.</string>
+    <string name="action_edit_service">Edit</string>
+    <string name="action_delete_service">Delete</string>
+    <string name="edit_service_title">Edit service</string>
+    <string name="add_service_title">Add service</string>
+    <string name="label_pricing_type">Pricing</string>
+    <string name="pricing_fixed">Fixed price</string>
+    <string name="pricing_range">Price range</string>
+    <string name="pricing_contact">Contact for price</string>
+    <string name="label_fixed_price">Price (₪)</string>
+    <string name="label_minimum_price">Minimum (₪)</string>
+    <string name="label_maximum_price">Maximum (₪)</string>
+    <string name="label_duration_minutes">Appointment duration (minutes)</string>
+    <string name="service_duration_format">%1$d minutes</string>
+    <string name="error_invalid_price">Enter a valid price greater than or equal to zero</string>
+    <string name="error_invalid_price_range">Maximum price must be greater than or equal to minimum price</string>
+    <string name="error_invalid_duration">Enter a duration from 5 to 480 minutes</string>
+    <string name="delete_service_title">Delete %1$s?</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_appointments">Appointments</string>
+    <string name="nav_queue">Queue</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_services">Business</string>
+    <string name="nav_profile">Profile</string>
+    <string name="number_zero">0</string>
+    <string name="number_format">%1$d</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_subtitle">Your Trackster account</string>
+    <string name="profile_account_label">ACCOUNT</string>
+    <string name="profile_email_label">Email address</string>
+    <string name="profile_secure_note">Your account is protected by Firebase Authentication.</string>
+    <string name="profile_missing_value">-</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_privacy">Privacy policy &amp; accessibility</string>
+    <string name="theme_system">Use device setting</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="language_system">Device language</string>
+    <string name="language_english">English</string>
+    <string name="language_hebrew">Hebrew</string>
+    <string name="privacy_title">Privacy policy</string>
+    <string name="privacy_effective_date">Effective: August 14, 2026</string>
+    <string name="privacy_information_title">Information we collect</string>
+    <string name="privacy_information_body">Trackster stores the account information you provide, including name, email address and account role. Business owners may publish a business name, services, prices, working hours, location, accessibility features, logo and photos. Appointment, queue, favorite and review information is stored when you use those features.</string>
+    <string name="privacy_use_title">How information is used</string>
+    <string name="privacy_use_body">Information is used only to authenticate accounts, display business listings, schedule and manage appointments, operate live queues, show reviews and deliver requested appointment and queue reminders. Calendar events are created only after you choose Add to calendar and confirm them in your calendar application. Trackster does not sell personal information and does not process payments.</string>
+    <string name="privacy_storage_title">Storage and security</string>
+    <string name="privacy_storage_body">Trackster uses Google Firebase Authentication, Cloud Firestore and Cloud Storage. Access is restricted through Firebase security rules based on the signed-in account and its role. No online system can guarantee absolute security, so users should use a unique password and protect their device.</string>
+    <string name="privacy_sharing_title">Sharing</string>
+    <string name="privacy_sharing_body">Public business information, availability, accessibility features and customer reviews are visible to signed-in users. Appointment details are limited to the customer and the relevant business. Data may be processed by Google Firebase as the application infrastructure provider.</string>
+    <string name="privacy_controls_title">Your choices</string>
+    <string name="privacy_controls_body">You can change optional business information, photos, schedules and accessibility details; disable notifications in device settings; reschedule or cancel eligible appointments; and sign out at any time. For account deletion or correction requests, contact the project administrator.</string>
+    <string name="accessibility_statement_title">Accessibility statement</string>
+    <string name="accessibility_statement_body">Trackster supports scalable text, screen-reader labels, large touch targets, RTL layouts and system light/dark appearance. Business accessibility details are supplied by each business and should be confirmed directly when accommodation is important.</string>
+    <string name="privacy_contact_title">Contact</string>
+    <string name="privacy_contact_body">Trackster is a classroom project. Privacy, accessibility, correction and deletion questions should be directed to the project administrator or instructor.</string>
+
+    <!-- Discovery, favorites and business details -->
+    <string name="hint_search_businesses">Search businesses or services</string>
+    <string name="filter_all">All</string>
+    <string name="filter_open">Open now</string>
+    <string name="filter_top_rated">Top rated</string>
+    <string name="filter_favorites">Favorites</string>
+    <string name="business_rating_format">%1$.1f (%2$d)</string>
+    <string name="business_no_reviews">New</string>
+    <string name="business_queue_open">Queue open</string>
+    <string name="business_queue_closed">Queue closed</string>
+    <string name="favorite_add_description">Add %1$s to favorites</string>
+    <string name="favorite_remove_description">Remove %1$s from favorites</string>
+    <string name="business_details_title">Business details</string>
+    <string name="business_gallery_title">Gallery</string>
+    <string name="business_reviews_title">Customer reviews</string>
+    <string name="business_reviews_empty">No reviews yet. Completed customers can be the first.</string>
+    <string name="business_hours_fallback">Hours not published</string>
+    <string name="today_hours">Today: %1$s–%2$s</string>
+    <string name="today_hours_with_break">Today: %1$s–%2$s · Break %3$s–%4$s</string>
+    <string name="today_closed">Today: Closed</string>
+    <string name="error_favorite_generic">Couldn\'t update favorites. Please try again.</string>
+
+    <!-- Business profile management -->
+    <string name="business_profile_title">Business profile</string>
+    <string name="business_profile_subtitle">Manage services, availability and photos customers see.</string>
+    <string name="business_hub_subtitle">Choose a section to manage your business.</string>
+    <string name="business_manage_title">Manage business</string>
+    <string name="manage_availability_subtitle">Opening hours, closed days and break times</string>
+    <string name="manage_photos_subtitle">Upload and manage customer-facing gallery photos</string>
+    <string name="manage_services_subtitle">Services, prices, ranges and appointment duration</string>
+    <string name="manage_reviews_subtitle">See ratings and comments from completed customers</string>
+    <string name="business_received_reviews">Received reviews</string>
+    <string name="business_reviews_empty_owner">No customer reviews received yet.</string>
+    <string name="availability_title">Availability</string>
+    <string name="availability_note">Set working hours for each day. Optional breaks are automatically removed from customer booking times.</string>
+    <string name="queue_open_label">Accept new bookings</string>
+    <string name="queue_open_help">Turn this off to temporarily stop all new appointments.</string>
+    <string name="label_opening_hours">Opening hours (for example: Mon-Fri, 09:00-17:00)</string>
+    <string name="action_save_hours">Save availability</string>
+    <string name="day_open_format">%1$s · Open</string>
+    <string name="day_closed_format">%1$s · Closed</string>
+    <string name="break_time_label">Break time (optional)</string>
+    <string name="break_time_help">Customers cannot book appointments that overlap this break.</string>
+    <string name="working_hours_label">WORKING HOURS</string>
+    <string name="time_to">to</string>
+    <string name="default_open_time" translatable="false">09:00</string>
+    <string name="default_close_time" translatable="false">17:00</string>
+    <string name="default_break_start_time" translatable="false">13:00</string>
+    <string name="default_break_end_time" translatable="false">14:00</string>
+    <string name="public_break_format">Break: %1$s–%2$s</string>
+    <string name="business_logo">Business logo</string>
+    <string name="business_logo_optional">Business logo (optional)</string>
+    <string name="business_logo_signup_help">Choose a square image. You can add or change it later from Profile.</string>
+    <string name="action_choose_logo">Choose logo</string>
+    <string name="action_change_logo">Change logo</string>
+    <string name="logo_not_uploaded">No logo uploaded</string>
+    <string name="success_logo_updated">Business logo updated</string>
+    <string name="error_logo_upload">Couldn\'t upload the business logo.</string>
+    <string name="error_invalid_work_hours">Check the highlighted day: closing must be after opening, and the break must be inside working hours.</string>
+    <string name="day_sunday">Sunday</string>
+    <string name="day_monday">Monday</string>
+    <string name="day_tuesday">Tuesday</string>
+    <string name="day_wednesday">Wednesday</string>
+    <string name="day_thursday">Thursday</string>
+    <string name="day_friday">Friday</string>
+    <string name="day_saturday">Saturday</string>
+    <string name="day_closed_short">Closed</string>
+    <string name="photos_title">Business photos</string>
+    <string name="photos_note">Upload up to six photos. The first photo is used as your cover.</string>
+    <string name="action_upload_photos">Upload photos</string>
+    <string name="photos_empty">No photos uploaded yet</string>
+    <string name="photo_remove_description">Remove business photo</string>
+    <string name="success_business_profile_saved">Business profile updated</string>
+    <string name="error_business_profile_generic">Couldn\'t update the business profile.</string>
+    <string name="error_photo_limit">You can publish up to six photos</string>
+    <string name="error_photo_upload">One or more photos could not be uploaded.</string>
+
+    <!-- Special dates and holiday hours -->
+    <string name="special_dates_title">Special dates &amp; holidays</string>
+    <string name="special_dates_help">Close individual dates or publish custom hours that override the normal weekly schedule.</string>
+    <string name="action_manage_special_dates">Manage special dates</string>
+    <string name="action_add_special_date">Add special date</string>
+    <string name="special_dates_empty">No upcoming closures or custom dates.</string>
+    <plurals name="special_dates_upcoming_count"><item quantity="one">%1$d upcoming special date</item><item quantity="other">%1$d upcoming special dates</item></plurals>
+    <string name="special_date_reason_hint">Name or reason (for example: Holiday)</string>
+    <string name="special_date_closed_all_day">Closed all day</string>
+    <string name="special_date_custom_hours">Custom hours</string>
+    <string name="special_date_default_closed">Holiday / closure</string>
+    <string name="special_date_default_custom">Special hours</string>
+    <string name="special_date_hours_format">%1$s–%2$s</string>
+    <string name="special_date_break_format">%1$s–%2$s · Break %3$s–%4$s</string>
+    <string name="special_date_closed_label">Closed</string>
+    <string name="special_date_edit_title">Special schedule for %1$s</string>
+    <string name="action_save_special_date">Save special date</string>
+    <string name="action_delete_special_date">Delete special date</string>
+    <string name="special_date_delete_title">Delete this special date?</string>
+    <string name="success_special_dates_saved">Special dates updated</string>
+    <string name="error_special_dates_save">Couldn\'t update special dates.</string>
+    <string name="error_special_date_hours">Closing must be after opening, and any break must be inside the custom hours.</string>
+    <string name="upcoming_schedule_changes">Upcoming schedule changes</string>
+    <string name="special_date_public_format">%1$s · %2$s · %3$s</string>
+    <string name="special_date_delete_message">%1$s · %2$s</string>
+
+    <!-- Location and accessibility -->
+    <string name="location_accessibility_title">Location &amp; accessibility</string>
+    <string name="manage_location_subtitle">Address, parking and accessibility features</string>
+    <string name="location_accessibility_help">Help customers find your business and understand which accessibility features are available.</string>
+    <string name="business_location_title">Business location</string>
+    <string name="location_address_hint">Street address</string>
+    <string name="location_city_hint">City</string>
+    <string name="location_notes_hint">Location notes (floor, entrance or landmark)</string>
+    <string name="parking_accessibility_title">Parking &amp; accessibility</string>
+    <string name="parking_accessibility_help">Only enable features that customers can currently use.</string>
+    <string name="parking_available">Parking available</string>
+    <string name="accessible_parking">Accessible parking spaces</string>
+    <string name="accessible_entrance">Wheelchair-accessible entrance</string>
+    <string name="accessible_restroom">Accessible restroom</string>
+    <string name="elevator_available">Elevator available</string>
+    <string name="action_save_location">Save location &amp; accessibility</string>
+    <string name="success_location_saved">Location and accessibility details updated</string>
+    <string name="error_location_save">Couldn\'t update the location details.</string>
+    <string name="error_location_incomplete">Enter both a street address and city, or leave both empty.</string>
+    <string name="location_details_title">Location</string>
+    <string name="location_not_provided">Location not provided</string>
+    <string name="accessibility_features_title">Parking &amp; accessibility</string>
+    <string name="accessibility_not_provided">No accessibility details have been provided. Contact the business to confirm your needs.</string>
+    <string name="parking_not_available">No on-site parking</string>
+    <string name="action_get_directions">Get directions</string>
+    <string name="error_directions_unavailable">No maps application is available on this device.</string>
+    <string name="feature_available_format">✓ %1$s</string>
+
+    <!-- Appointment actions and verified reviews -->
+    <string name="action_cancel_appointment">Cancel</string>
+    <string name="action_leave_review">Leave review</string>
+    <string name="review_submitted">Reviewed</string>
+    <string name="cancel_title">Cancel appointment?</string>
+    <string name="cancel_message">Your place in the queue will be released. This cannot be undone.</string>
+    <string name="action_keep_appointment">Keep appointment</string>
+    <string name="success_appointment_cancelled">Appointment cancelled</string>
+    <string name="error_cancel_appointment">Couldn\'t cancel the appointment.</string>
+    <string name="action_reschedule_appointment">Reschedule</string>
+    <string name="reschedule_title">Reschedule appointment</string>
+    <string name="action_confirm_reschedule">Confirm new time</string>
+    <string name="success_appointment_rescheduled">Appointment rescheduled</string>
+    <string name="error_reschedule_appointment">Couldn\'t reschedule the appointment.</string>
+    <string name="reschedule_service_locked">The original service is kept while you choose a new date and time.</string>
+    <string name="action_add_to_calendar">Add to calendar</string>
+    <string name="calendar_event_title">%1$s at %2$s</string>
+    <string name="calendar_event_description">Trackster appointment for %1$s. Price: %2$s</string>
+    <string name="error_calendar_unavailable">No calendar application is available on this device.</string>
+    <string name="appointment_status_waiting">Waiting</string>
+    <string name="appointment_status_in_service">In service</string>
+    <string name="appointment_status_completed">Completed</string>
+    <string name="appointment_status_cancelled">Cancelled</string>
+    <string name="review_title">Review %1$s</string>
+    <string name="review_hint">Share your experience (optional)</string>
+    <string name="action_submit_review">Submit review</string>
+    <string name="review_rating_required">Choose a star rating</string>
+    <string name="success_review_submitted">Thanks for your review!</string>
+    <string name="error_review_generic">Couldn\'t submit your review.</string>
+
+    <!-- Queue reminders -->
+    <string name="notification_channel_queue">Queue reminders</string>
+    <string name="notification_channel_queue_description">Alerts when your place in a live queue is approaching.</string>
+    <string name="notification_almost_turn_title">Your turn is coming up</string>
+    <string name="notification_almost_turn_body">Only %1$d ahead at %2$s.</string>
+    <string name="notification_your_turn_title">It\'s your turn!</string>
+    <string name="notification_your_turn_body">%1$s is ready for you now.</string>
+    <string name="notification_channel_appointments">Appointment reminders</string>
+    <string name="notification_channel_appointments_description">Reminders before upcoming Trackster appointments.</string>
+    <string name="notification_day_before_title">Appointment tomorrow</string>
+    <string name="notification_day_before_body">%1$s at %2$s with %3$s.</string>
+    <string name="notification_hour_before_title">Appointment in one hour</string>
+    <string name="notification_hour_before_body">%1$s starts at %2$s with %3$s.</string>
+
+    <!-- Business insights -->
+    <string name="business_insights_title">Business insights</string>
+    <string name="business_insights_period">This month · updates automatically</string>
+    <string name="business_insight_completed">Completed</string>
+    <string name="business_insight_cancelled">Cancelled</string>
+    <string name="business_insight_revenue">Estimated revenue</string>
+    <string name="business_insight_completion_rate">Completion rate</string>
+    <string name="business_insight_top_service">Top service</string>
+    <string name="business_insight_busiest_time">Busiest time</string>
+    <string name="business_insight_no_data">Not enough data yet</string>
+    <string name="business_insight_currency_format">₪%1$s</string>
+    <string name="business_insight_percent_format">%1$d%%</string>
+    <string name="business_insight_time_format">%1$s at %2$s</string>
+</resources>

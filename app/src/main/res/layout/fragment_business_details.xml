@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/trackster_surface" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+            <ImageView android:id="@+id/iv_back" android:layout_width="42dp" android:layout_height="42dp" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="@string/action_back" android:padding="9dp" android:src="@drawable/ic_arrow_back" app:tint="@color/trackster_navy" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/business_details_title" android:textColor="@color/trackster_navy" android:textSize="21sp" android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center_vertical" android:orientation="horizontal">
+            <com.google.android.material.card.MaterialCardView android:layout_width="58dp" android:layout_height="58dp" app:cardBackgroundColor="@color/trackster_blue_light" app:cardCornerRadius="29dp" app:cardElevation="0dp">
+                <ImageView android:id="@+id/iv_details_logo" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="@string/business_logo" android:padding="13dp" android:scaleType="centerInside" android:src="@drawable/ic_business" app:tint="@color/trackster_blue" />
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:id="@+id/tv_details_name" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:textColor="@color/trackster_navy" android:textSize="27sp" android:textStyle="bold" />
+        </LinearLayout>
+        <TextView android:id="@+id/tv_details_services" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:textColor="@color/trackster_text_secondary" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+            <TextView android:id="@+id/tv_details_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="4dp" android:textColor="@color/trackster_navy" android:textStyle="bold" app:drawableStartCompat="@drawable/ic_star" />
+            <TextView android:id="@+id/tv_details_queue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="18dp" android:textColor="@color/trackster_success" android:textStyle="bold" />
+        </LinearLayout>
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:text="@string/availability_title" />
+        <LinearLayout android:id="@+id/details_hours_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_empty_state" android:orientation="vertical" android:paddingHorizontal="14dp" android:paddingVertical="6dp" />
+        <LinearLayout android:id="@+id/details_special_dates_section" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+            <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/upcoming_schedule_changes" />
+            <TextView android:id="@+id/tv_details_special_dates" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_info_banner" android:padding="14dp" android:textColor="@color/trackster_blue_dark" android:textSize="13sp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/details_location_section" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/location_details_title" />
+            <com.google.android.material.card.MaterialCardView style="@style/Trackster.Card.Surface" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:id="@+id/tv_details_address" android:layout_width="match_parent" android:layout_height="wrap_content" android:drawablePadding="10dp" android:textColor="@color/trackster_navy" android:textSize="16sp" android:textStyle="bold" app:drawableStartCompat="@drawable/ic_location" />
+                    <TextView android:id="@+id/tv_details_location_notes" style="@style/Trackster.Text.BodySecondary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="34dp" android:layout_marginTop="4dp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_directions" style="@style/Trackster.Button.Outlined" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="@string/action_get_directions" app:icon="@drawable/ic_location" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/details_accessibility_section" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:text="@string/accessibility_features_title" />
+            <LinearLayout android:id="@+id/details_accessibility_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:background="@drawable/bg_empty_state" android:orientation="vertical" android:padding="16dp" />
+        </LinearLayout>
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/business_gallery_title" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_details_photos" android:layout_width="match_parent" android:layout_height="108dp" android:layout_marginTop="10dp" android:clipToPadding="false" />
+        <TextView android:id="@+id/tv_details_photos_empty" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_empty_state" android:gravity="center" android:padding="24dp" android:text="@string/photos_empty" android:textColor="@color/trackster_text_secondary" android:visibility="gone" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_details_book" style="@style/Trackster.Button.Primary" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/action_book_join_queue" />
+        <TextView style="@style/Trackster.Text.Section" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="26dp" android:text="@string/business_reviews_title" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_reviews" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" />
+        <TextView android:id="@+id/tv_reviews_empty" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:background="@drawable/bg_empty_state" android:gravity="center" android:padding="24dp" android:text="@string/business_reviews_empty" android:textColor="@color/trackster_text_secondary" android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>
