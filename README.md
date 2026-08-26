@@ -6,6 +6,14 @@ The app keeps the visual direction from the approved project proposal: a bright 
 
 ## App preview
 
+### Customer experience
+
+| Discover businesses and services | View services, hours, and location |
+| --- | --- |
+| <img src="docs/screenshots/customer-home.png" width="260" alt="Trackster customer home and business directory"> | <img src="docs/screenshots/customer-business-details.png" width="260" alt="Trackster customer view of business details"> |
+
+### Welcome and business owner experience
+
 | Welcome and role selection | Business dashboard | Business management |
 | --- | --- | --- |
 | <img src="docs/screenshots/welcome.png" width="260" alt="Trackster welcome screen"> | <img src="docs/screenshots/business-dashboard.png" width="260" alt="Trackster business dashboard"> | <img src="docs/screenshots/business-management.png" width="260" alt="Trackster business management hub"> |
