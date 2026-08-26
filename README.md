@@ -136,3 +136,7 @@ Minimum Android version: API 24.
 - The repository intentionally excludes `local.properties`, Firebase configuration files, `.firebaserc`, keystores, service-account files, APKs, videos, PDFs, archives, and private lecturer credentials.
 - The private Moodle package supplies the lecturer with the Firebase configuration, installable APK, demo credentials, and run instructions.
 - The Firebase rule files remain in the repository so the backend security design can be reviewed.
+
+## License
+
+Trackster is available under the [MIT License](LICENSE).
